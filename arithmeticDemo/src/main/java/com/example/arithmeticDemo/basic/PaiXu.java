@@ -5,6 +5,38 @@ import org.junit.jupiter.api.Test;
 public class PaiXu {
 	
 	int ary[]={2,3,59,7,4,2,13,58,6,21,42};
+	
+	/**
+	 * 选择排序
+	 * 假设第一个元素为最小元素，依次与剩余元素比较，若确实是最小的，则比较下一个元素，否则将第一个元素与最小元素交换位置。
+	 * 剩余元素参照上述方法继续比较。
+	 */
+	@Test
+	public void xuanZe() {
+		
+		for(int i=0;i<ary.length-1;i++) {
+			
+			int min=i;
+			
+			//用当前位置元素与待排序元素依次比较，min始终为最小元素下标。
+			for(int j=i+1;j<ary.length;j++) {
+				if(ary[j]<ary[min]) {
+					min = j;
+				}
+			}
+			//交换最小元素与当前位置元素
+			if(min!=i) {
+				int tmp = ary[i];
+				ary[i]=ary[min];
+				ary[min]=tmp;
+			}
+			
+			
+		}
+		out(ary);
+	}
+	
+	
 	/**
 	 * 冒泡排序
 	 * 比较相邻的两个元素，将较大的元素放在后面
