@@ -2,10 +2,6 @@ package com.example.arithmeticDemo.basic;
 
 import org.junit.jupiter.api.Test;
 
-//import org.junit.Test;
-
-
-
 public class PaiXu {
 	
 	int ary[]={2,3,59,7,4,2,13,58,6,21,42};
@@ -15,12 +11,22 @@ public class PaiXu {
 	 */
 	@Test
 	public void maoPao() {
-		for(int i=0;i<ary.length;i++) {
-			
-			for(int j=0;j<ary.length;j++) {
-				
+		
+		for(int i=0;i<ary.length-1;i++) {
+			for(int j=i+1;j<ary.length;j++) {
+				//后一个大于前一个，则交换
+				if(ary[i]>ary[j]) {
+					int little = ary[j];
+					ary[j] =ary[i];
+					ary[i]=little;
+				}
 			}
+			
 		}
+		
+		
+		
+		out(ary);
 	}
 	
 	/**
